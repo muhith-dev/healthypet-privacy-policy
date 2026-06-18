@@ -1,0 +1,109 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "HealthyPet Account Deletion" }}>
+	<section class="max-w-3xl mx-auto py-8 text-black">
+		<!-- Header -->
+		<div class="bg-gradient-to-br from-[#4A5E72] to-[#5A7A9A] rounded-2xl p-6 text-white mb-8 shadow-lg">
+			<div class="flex items-center gap-4">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+				</svg>
+				<div>
+					<h1 class="text-2xl font-bold m-0 text-white">HealthyPet Account Deletion</h1>
+					<p class="text-white/80 text-sm mt-1">How account deletion and data retention works.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section 1: How to Request -->
+		<div class="mb-8">
+			<div class="flex items-center gap-2 mb-4">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#4A5E72]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<h2 class="text-xl font-bold text-gray-800 m-0">How to Request Account Deletion</h2>
+			</div>
+			<div class="bg-white rounded-2xl p-6 shadow-[0_4px_10px_rgba(0,0,0,0.03)] border border-gray-100">
+				<p class="text-sm text-gray-800 mb-4 leading-relaxed">Users can request account deletion from:</p>
+				
+				<div class="flex items-center gap-3 bg-[#EBF5FB] p-4 rounded-xl mb-4 w-fit">
+					<span class="text-sm font-semibold text-[#4A5E72]">Settings</span>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#4A5E72]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+					</svg>
+					<span class="text-sm font-semibold text-red-600">Delete Account</span>
+				</div>
+                
+                <p class="text-sm text-gray-800 mb-0 font-semibold">or</p>
+                <p class="text-sm text-gray-800 mt-2">Contact the application administrator.</p>
+			</div>
+		</div>
+
+		<!-- Section 2: Deleted Data -->
+		<div class="mb-8">
+			<div class="flex items-center gap-2 mb-4">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#4A5E72]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+				</svg>
+				<h2 class="text-xl font-bold text-gray-800 m-0">What Data Will Be Deleted</h2>
+			</div>
+			<div class="bg-white rounded-2xl p-6 shadow-[0_4px_10px_rgba(0,0,0,0.03)] border border-gray-100">
+                <p class="text-sm text-gray-800 mb-4 leading-relaxed">The following data will be permanently removed:</p>
+                
+				<ul class="list-none space-y-3 pl-0 mb-6">
+					{[
+						'User profile',
+						'Pet data',
+						'Vaccination history',
+						'Medical records',
+						'Uploaded photos'
+					].map(item => (
+						<li class="flex items-center gap-3 text-sm text-gray-800">
+							<div class="bg-red-50 p-1.5 rounded-full shrink-0">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+								  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+								</svg>
+							</div>
+							<span>{item}</span>
+						</li>
+					))}
+				</ul>
+
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#4A5E72] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        <p class="text-sm text-gray-800 m-0 leading-relaxed">Supabase cascading deletes are used.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#4A5E72] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                        <p class="text-sm text-gray-800 m-0 leading-relaxed">Uploaded files inside Supabase Storage are also deleted.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <p class="text-sm text-gray-800 m-0 leading-relaxed">Orphaned records are not left behind.</p>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+        <!-- Section 3: Data Retention -->
+		<div class="mb-8">
+			<div class="flex items-center gap-2 mb-4">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#4A5E72]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<h2 class="text-xl font-bold text-gray-800 m-0">Data Retention</h2>
+			</div>
+			<div class="bg-white rounded-2xl p-6 shadow-[0_4px_10px_rgba(0,0,0,0.03)] border border-gray-100">
+                <div class="bg-[#EBF5FB] rounded-xl p-4 flex gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#4A5E72] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+					</svg>
+					<p class="text-sm text-[#4A5E72] m-0 leading-relaxed">Encrypted backups may be retained for up to 30 days before being permanently removed.</p>
+				</div>
+            </div>
+        </div>
+	</section>
+</PageLayout>
